@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//O vsalor de interrogação é não obrigatório
 Route::get('/contato/{id?}',function($id = null){
     return "Contato id = $id";
 });
@@ -28,3 +29,11 @@ Route::put('/contato',function(){
 
     return "Contato PUT";
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
